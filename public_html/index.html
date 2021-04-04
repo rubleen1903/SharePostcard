@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <br><br>
+    <h1 class="text-center">Postcard using HTML,CSS,JSON-PDF</h1>
+    <h3 class="text-center">Code is maintained for mobile and large media devices</h3>
+    <br><br>
+    <center> <a id="viewcertificate" href="" class="btn btn-success btn-large">View Postcard according to the media screen</a></center>
+    <br>
+    <h6 class="text-center text-warning">****This will generate the Postcard according to the media width</h6>
+
+    <script>
+        var mobile;
+
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                mobile = "yes";
+                document.getElementById("viewcertificate").href = "Certificate.html?mobile=" + mobile + "";
+            } else {
+                mobile = "no";
+                document.getElementById("viewcertificate").href = "Certificate.html?mobile=" + mobile + "";
+            }
+        }
+
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
+    </script>
+</body>
+
+</html>
